@@ -20,10 +20,22 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
+      // this is first method css class with object we have create first StyleSheet.create object
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to Hacker Dais!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+       <View>
+        <Text style={styles.welcome}>Welcome to !</Text>
+        </View>
+
+        {/* this is inline style and second method */}
+        <View style={{backgroundColor:'red', width:'100%'}}>
+        <Text>Hacker Dais!</Text>
+        </View>
+
+      {/* horizontally flex apply */}
+        <View style={styles.myview}>
+        <Text>Hacker Dais!</Text>
+        </View>
+
       </View>
     );
   }
@@ -32,8 +44,18 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'center', // center everything vertifcally
+    
+    justifyContent: 'flex-start', // start everything vertifcally top
+    // justifyContent: 'flex-end', // end everything vertifcally bottom
+
+    // alignItems: 'center', // // center everything horizontally
+    
+    alignItems: 'flex-start', // start everything horizontally left
+    alignItems: 'flex-end', // end everything horizontally right
+
+    marginTop:153,
+
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -46,4 +68,10 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  myview:{
+    backgroundColor:'blue'
+    
+
+  },
+
 });
