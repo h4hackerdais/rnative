@@ -33,6 +33,25 @@ export default class App extends Component{
       }
     })
   }
+
+
+ // we call it from another component mean listitem by
+  onDeleteItem = (aindex) =>{
+// alert("delete function")
+
+// this removing array
+const newArray = this.state.random.filter((item, index)=>{
+  // this will check our index or same or another
+ return aindex !== index;
+});
+// this will set if not same
+this.setState({
+  random:newArray
+})
+
+  }
+
+
   render() {
   
     return (
@@ -45,7 +64,8 @@ export default class App extends Component{
     <Generator add={this.onAddRandom} />
 
       {/* This is our component we are sending item list array to ListItem component */}
-      <ListItem items={this.state.random} />
+      {/* we add on more function this will call from another component by  and sending by props */}
+      <ListItem items={this.state.random} delete={this.onDeleteItem} />
 
       </View>
     );

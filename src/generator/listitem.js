@@ -9,7 +9,11 @@ const ListItem = (props) =>{
         props.items.map((item, i)=>(
             // this is another event click opacity effect got 
         <TouchableOpacity
-        onPress={()=>alert("delete")}
+        // onPress={()=>alert("delete")}
+        onPress={()=>{
+            // we are sending index i when we click this delete function we send array index i where we calling this function receive index
+            props.delete(i)
+        }}
         key={i}
         style={styles.listitem}
         >
